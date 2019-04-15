@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Punjab Cources</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Cource name</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @punjab_cources.each do |punjab_cource| %>
+      <tr>
+        <td><%= punjab_cource.cource_name %></td>
+        <td><%= punjab_cource.group.group_name %></td>
+         <td><%= link_to 'view teachers',view_punjab_teachers_path(punjab_cource), class: 'btn btn-default btn-xs'%></td>
+        <td><%= link_to 'Show', punjab_cource %></td>
+        <td><%= link_to 'Edit', edit_punjab_cource_path(punjab_cource) %></td>
+        <td><%= link_to 'Destroy', punjab_cource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Punjab Cource', new_punjab_cource_path %>

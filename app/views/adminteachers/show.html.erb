@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<table class="table table-bordered">
+	<tr>
+		<th> <strong>Teacher Name:</strong></th>
+		<td>   <%= @adminteacher.teacher_name %></td>
+	</tr>
+	<tr>
+		<th><strong>Federal Board Cources:</strong></th>
+		<td>  
+			<% @adminteacher.federal_cources.each do |cource_name| %>
+			<ul>
+				<li><%= cource_name.cource_name %></li>
+			</ul>
+			
+
+			 <%end%>
+
+		 	
+
+
+		 </td>
+	</tr>
+	<tr>
+		<th><strong>Punjab Board Cources:</strong></th>
+		<td>  
+			<% @adminteacher.punjab_cources.each do |cource_name| %>
+			<ul>
+				<li><%= cource_name.cource_name %></li>
+			</ul>
+			
+
+			 <%end%>
+
+		 	
+
+
+		 </td>
+	</tr>
+
+
+	<tr>
+		
+		<th><strong>Teacher Email:</strong></th>
+		<td><%= @adminteacher.teacher_email %></td>
+
+		
+		
+	</tr>
+
+</table>
+
+
+
+
+
+<%= link_to 'Edit', edit_adminteacher_path(@adminteacher) %> |
+<%= link_to 'Back', adminteachers_path %>

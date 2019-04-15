@@ -1,0 +1,2 @@
+module PunjabCourcesHelper
+end

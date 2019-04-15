@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@adminteacher) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :teacher_name %>
+      <%= f.input :teacher_email, as: :email %>
+    <%= f.association :federal_cources, label_method: :cource_name %>
+     <%= f.association :punjab_cources, label_method: :cource_name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

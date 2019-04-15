@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  punjab_cource: one
+  q: MyString
+  o1: MyString
+  o2: MyString
+
+two:
+  email: MyString
+  punjab_cource: two
+  q: MyString
+  o1: MyString
+  o2: MyString

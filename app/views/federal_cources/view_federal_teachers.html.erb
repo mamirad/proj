@@ -1,0 +1,29 @@
+<table class="table table-bordered">
+<thead>
+	<tr>
+		
+		<th>teacher id</th>
+		<th>Teacher name</th>
+		<th>option</th>
+	</tr>
+</thead>
+<tbody>
+	
+
+<% @view_federal_teachers.each do |vft| %>
+<tr>
+	<td>
+		<%=vft.id%>
+	</td>
+	<td>
+		<%=vft.teacher_name%>
+	</td>
+	<td> <%= link_to 'view mcqs',federal_teacher_mcqs_path(vft.teacher_email), class: 'btn btn-default' %></td>
+</tr>
+
+<%end%>
+
+
+
+</tbody>
+</table>

@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Asigned Cources</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Cource Name</th>
+      <th>Class Name</th>
+      <th>Board Name</th>
+      <th>create Question</th>
+      
+     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @federal_teacher_cources.each do |federal_teacher_cource| %>
+      <tr>
+        <td><%= federal_teacher_cource.cource_name %></td>
+          <td><%= federal_teacher_cource.group.group_name %></td>
+         <td>Federal Board</td>
+         <td><%=link_to 'Create Question',new_question_path(0,federal_teacher_cource.id),class: "btn btn-default btn-xs" %></td>
+        
+     
+    
+      </tr>
+    <% end %>
+        <% @punjab_teacher_cources.each do |punjab_teacher_cource| %>
+      <tr>
+        <td><%= punjab_teacher_cource.cource_name %></td>
+         <td><%= punjab_teacher_cource.group.group_name %></td>
+         <td>Punjab Board</td>
+         <td><%=link_to 'Create Question',new_question_path(1,punjab_teacher_cource.id),class: "btn btn-default btn-xs" %></td>
+        
+     
+    
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
