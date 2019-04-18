@@ -2,121 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a6d4c0d-4b77-49ad-9fad-3047a9d41a83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/teacher_auth/edit_mcq.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/teacher_auth/new_mcq.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/teacher_auth/show_mcq.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/teachers/teacher_mcqs.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/adminteachers.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/custom_sweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/custom_sweet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/federal.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/federal_cources.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/punjab.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/punjab_cources.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/adminteachers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/federal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/federal_cources.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/punjab.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/punjab_cources.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/adminteachers_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/federal_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/federal_cources_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/punjab_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/punjab_cources_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/teacher_auth_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/teacher_auth_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/adminteachers_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/federal_cources_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/federal_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/punjab_cources_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/punjab_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/adminteacher.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/f_mcq.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/federal_cource.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/federal_cource_teacher.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/group.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/p_mcq.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/punjab_cource.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/punjab_cource_teacher.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/federal_cource_policy.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/nil_class_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/nil_class_policy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/_adminteacher.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/adminteachers/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal/home.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/_federal_cource.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/federal_teacher_mcqs.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/federal_cources/view_federal_teachers.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/custom_layouts/adminlayout.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/custom_layouts/adminlayout.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/header/admin_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/header/admin_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/menu/admin_menu.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/menu/admin_menu.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/menu/teacher_menu.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/menu/teacher_menu.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab/home.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/_punjab_cource.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/punjab_cources/view_punjab_teachers.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/_mcq.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/_mcq.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/_mcq.js.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/new_question.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/view_mcqs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/view_mcqs.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/view_teacher_cources.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/view_teacher_cources.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190411110253_create_groups.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190411110718_create_federal_cources.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190411120049_create_adminteachers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190412055759_create_punjab_cources.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190412075129_create_federal_cource_teachers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190412075201_create_punjab_cource_teachers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190412133104_create_f_mcqs.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190412133616_create_p_mcqs.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/adminteachers_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/federal_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/federal_cources_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/punjab_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/punjab_cources_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/adminteachers.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/f_mcqs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/federal_cource_teachers.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/federal_cources.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/groups.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/groups.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/p_mcqs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/punjab_cource_teachers.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/punjab_cources.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/adminteacher_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/f_mcq_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/federal_cource_teacher_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/federal_cource_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/p_mcq_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/punjab_cource_teacher_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/punjab_cource_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/adminteachers_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/federal_cources_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/punjab_cources_test.rb" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -353,6 +239,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -481,12 +368,12 @@
       <workItem from="1555492659940" duration="13320000" />
       <workItem from="1555508478664" duration="3129000" />
       <workItem from="1555511790285" duration="5031000" />
-      <workItem from="1555567369117" duration="12449000" />
+      <workItem from="1555567369117" duration="13049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37777000" />
+    <option name="totallyTimeSpent" value="38377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="25" width="1305" height="743" extended-state="6" />
