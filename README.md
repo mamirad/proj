@@ -26,3 +26,5 @@ Things you may want to cover:
 # borad-certifications
 # broard
 # board-certification
+# boards-certification
+# board_certification
