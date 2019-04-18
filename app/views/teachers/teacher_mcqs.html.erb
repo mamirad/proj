@@ -1,0 +1,38 @@
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Board</th>
+    <th>Group</th>
+    <th>question</th>
+    <th>otpion</th>
+    <th>otpion</th>
+    <th>otpion</th>
+    <th>otpion</th>
+    <th>otpion</th>
+    <th>otpion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @teacher_courses.each do |teachercourse| %>
+
+    <% teachercourse.mcqs.each do |a| %>
+  <tr>
+    <td> <%=a.teachercourse.course.name %></td>
+    <td> <%=a.teachercourse.course.boardgroup.board.name %></td>
+    <td> <%=a.teachercourse.course.boardgroup.group.name %></td>
+    <td> <%=a.question %></td>
+    <td> <%=a.option1 %></td>
+    <td> <%=a.option2 %></td>
+    <td> <%=a.option3 %></td>
+    <td> <%=a.option4 %></td>
+    <td> <%=a.option5 %></td>
+    <td> <%=a.option6 %></td>
+  </tr>
+
+    <%end %>
+  <% end %>
+
+
+  </tbody>
+</table>

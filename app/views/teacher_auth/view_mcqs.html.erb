@@ -1,70 +1,30 @@
-<div class="row">
-<div class="col-md-5">
-	
 <table class="table table-bordered">
-	<h3>Federal cources mcqs</h3>
-	<thead>
-		<th>Subject</th>
-		<th>Question</th>
-		<th>opt 1</th>
-		<th>opt 2</th>
-	</thead>
-	<tbody>
-		<%@fmcqs.each do |fmcq|%>
-			<tr>
-				<td>
-					<%=fmcq.federal_cource.cource_name%>
-				</td>
-				<td>
-					<%=fmcq.q%>
-				</td>
-				<td>
-					<%=fmcq.o1%>
-				</td>
-				<td>
-					<%=fmcq.o2%>
-				</td>
-
-
-			</tr>
-		<%end%>
-		
-	</tbody>
+  <tr>
+    <th>Questions</th>
+    <th>Option#1</th>
+    <th>Option#2</th>
+    <th>Option#3</th>
+    <th>Option#4</th>
+    <th>Option#5</th>
+    <th>Option#6</th>
+  </tr>
+  <%@mcqs.each do |mcq| %>
+  <tr>
+    <td><%=mcq.question %></td>
+    <td><%=mcq.option1 %></td>
+    <td><%=mcq.option2 %></td>
+    <td><%=mcq.option3 %></td>
+    <td><%=mcq.option4 %></td>
+    <td><%=mcq.option5 %></td>
+    <td><%=mcq.option6 %></td>
+    <td><%=link_to 'edit',edit_mcq_path(mcq.id) %></td>
+    <td><%= link_to 'Delete',
+                    delete_mcq_path(mcq),
+                    method: :delete,
+                    data: { confirm_swal: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
 </table>
 
 
-</div>
-<div class="col-md-6">
-	<table class="table table-bordered">
-	<h3>Punjab cources mcqs</h3>
-	<thead>
-		<th>Subject</th>
-		<th>Question</th>
-		<th>opt 1</th>
-		<th>opt 2</th>
-	</thead>
-	<tbody>
-		<%@pmcqs.each do |pmcq|%>
-			<tr>
-				<td>
-					<%=pmcq.punjab_cource.cource_name%>
-				</td>
-				<td>
-					<%=pmcq.q%>
-				</td>
-				<td>
-					<%=pmcq.o1%>
-				</td>
-				<td>
-				<%=pmcq.o2%>
-				</td>
-
-
-			</tr>
-		<%end%>
-	</tbody>
-</table>
-
-
-</div>
-</div>
+<td><%=link_to 'go back',view_teacher_cources_path %></td>

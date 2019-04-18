@@ -1,2 +1,0 @@
-module AdminteachersHelper
-end

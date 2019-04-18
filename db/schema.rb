@@ -10,75 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_133616) do
+ActiveRecord::Schema.define(version: 2019_04_17_132019) do
 
-  create_table "adminteachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "teacher_name"
-    t.string "teacher_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "f_mcqs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email"
-    t.bigint "federal_cource_id"
-    t.string "q"
-    t.string "o1"
-    t.string "o2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["federal_cource_id"], name: "index_f_mcqs_on_federal_cource_id"
-  end
-
-  create_table "federal_cource_teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "adminteacher_id"
-    t.bigint "federal_cource_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["adminteacher_id"], name: "index_federal_cource_teachers_on_adminteacher_id"
-    t.index ["federal_cource_id"], name: "index_federal_cource_teachers_on_federal_cource_id"
-  end
-
-  create_table "federal_cources", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "cource_name"
+  create_table "boardgroups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
+    t.bigint "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_federal_cources_on_group_id"
+    t.index ["board_id"], name: "index_boardgroups_on_board_id"
+    t.index ["group_id"], name: "index_boardgroups_on_group_id"
+  end
+
+  create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "boardgroup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["boardgroup_id"], name: "index_courses_on_boardgroup_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "group_name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "p_mcqs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "mcqs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "question"
+    t.string "option1"
+    t.string "option2"
+    t.string "option3"
+    t.string "option4"
+    t.string "option5"
+    t.string "option6"
+    t.bigint "teachercourse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teachercourse_id"], name: "index_mcqs_on_teachercourse_id"
+  end
+
+  create_table "teachercourses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_teachercourses_on_course_id"
+    t.index ["teacher_id"], name: "index_teachercourses_on_teacher_id"
+  end
+
+  create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
-    t.bigint "punjab_cource_id"
-    t.string "q"
-    t.string "o1"
-    t.string "o2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["punjab_cource_id"], name: "index_p_mcqs_on_punjab_cource_id"
-  end
-
-  create_table "punjab_cource_teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "adminteacher_id"
-    t.bigint "punjab_cource_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["adminteacher_id"], name: "index_punjab_cource_teachers_on_adminteacher_id"
-    t.index ["punjab_cource_id"], name: "index_punjab_cource_teachers_on_punjab_cource_id"
-  end
-
-  create_table "punjab_cources", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "cource_name"
-    t.bigint "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_punjab_cources_on_group_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,12 +89,11 @@ ActiveRecord::Schema.define(version: 2019_04_12_133616) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "f_mcqs", "federal_cources"
-  add_foreign_key "federal_cource_teachers", "adminteachers"
-  add_foreign_key "federal_cource_teachers", "federal_cources"
-  add_foreign_key "federal_cources", "groups"
-  add_foreign_key "p_mcqs", "punjab_cources"
-  add_foreign_key "punjab_cource_teachers", "adminteachers"
-  add_foreign_key "punjab_cource_teachers", "punjab_cources"
-  add_foreign_key "punjab_cources", "groups"
+  add_foreign_key "boardgroups", "boards"
+  add_foreign_key "boardgroups", "groups"
+  add_foreign_key "boards", "users"
+  add_foreign_key "courses", "boardgroups"
+  add_foreign_key "mcqs", "teachercourses"
+  add_foreign_key "teachercourses", "courses"
+  add_foreign_key "teachercourses", "teachers"
 end

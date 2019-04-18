@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	 enum role: {federal: 0, punjab: 1, admin: 2, teacher: 3}
+	 enum role: {admin: 0, teacher: 1}
+	 has_many :boards
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -1,0 +1,11 @@
+<% flash.each do |mcq| %>
+  <div class="alert alert-success">
+    <ul>
+
+      <li style="color:black;"><%= mcq %></li>
+
+    </ul>
+  </div>
+<% end %>
+<%= render 'mcq' %>
+<%=link_to 'go back',view_teacher_cources_path %>

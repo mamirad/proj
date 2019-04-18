@@ -13,6 +13,9 @@ class NilClassPolicy
   	@user.role=='federal'
 
   end
+  def boardgroup_exist?
+    Boardgroup.all.any?
+  end
 
   # def index?
   #   false

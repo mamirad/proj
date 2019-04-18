@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<br><br>
+<table class="table table-bordered">
+	<tr>
+		<th>Name:</th>
+		<td><%= @group.name %></td>
+		<th>Boards:</th>
+		<td><ul>
+  <% @group.boards.each do |a| %>
+  <li>
+  <%=a.name%>
+</li>
+  <%end%>
+</ul></td>
+	</tr>
+</table>
+<p>
+ 
+  
+<%= link_to 'Edit', edit_group_path(@group),class: 'btn btn-default' %> 
+<%= link_to 'Back', groups_path,class: 'btn btn-default' %>

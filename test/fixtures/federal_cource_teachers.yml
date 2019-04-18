@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  adminteacher: one
-  federal_cource: one
-
-two:
-  adminteacher: two
-  federal_cource: two

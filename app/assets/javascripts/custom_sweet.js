@@ -35,9 +35,15 @@
      
     if (result.value) {
       // User clicked confirm button
-      element.removeAttribute('data-confirm-swal')
+        swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+        });
+
+     element.removeAttribute('data-confirm-swal')
 
       element.click()
+
+
     }
   }
 
