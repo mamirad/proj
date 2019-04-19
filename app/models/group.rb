@@ -3,6 +3,8 @@ class Group < ApplicationRecord
   has_many :boards, through: :boardgroups
 
   validates :name, uniqueness: true
+  validates :name,:board_ids, presence: true
+
 
 
   

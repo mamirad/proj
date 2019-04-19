@@ -1,5 +1,5 @@
 
-class PunjabCourcePolicy
+class CoursePolicy
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -19,7 +19,8 @@ class PunjabCourcePolicy
   end
 
   def create?
-    PunjabCource.all.any?
+   Course.all.any?
+
 
     #false
   end

@@ -5,6 +5,7 @@ class Boardgroup < ApplicationRecord
   has_many :courses
 
 
+
   validate :unique_board_group
 
   private

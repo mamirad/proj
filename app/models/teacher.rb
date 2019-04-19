@@ -8,4 +8,8 @@ class Teacher < ApplicationRecord
   validates :phone, presence: true
   validates :email, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :course_ids, presence: true
+
+
+
 end

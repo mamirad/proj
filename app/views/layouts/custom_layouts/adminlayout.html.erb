@@ -7,6 +7,11 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application' %>
+
+
+  <%= yield :js %>
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -42,6 +47,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+
 
 
       <%= yield %>

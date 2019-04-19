@@ -1,11 +1,25 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
+<br><br>
+<table class="table table-bordered">
 
-<p>
-  <strong>Name:</strong>
-  <%= @board.name %>
-</p>
+    <th>
+      <strong>Name:</strong>
+    </th>
+    <td>
+      <%= @board.name %>
+    </td>
 
 
 
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+</table>
+
+
+
+
+<div class="btn-group">
+  <%= link_to 'Edit', edit_board_path(@board),class: 'btn btn-success' %>
+  <%= link_to 'Back', boards_path ,class: 'btn btn-info' %>
+</div>
+
+
+

@@ -20,7 +20,8 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
-    authorize current_user
+    (authorize current_user) && (authorize Course.all)
+
     @teacher = Teacher.new
   end
 
@@ -32,15 +33,15 @@ class TeachersController < ApplicationController
   # POST /teachers.json
   def create
     @teacher = Teacher.new(teacher_params)
-
     @course_list = params[:teacher][:course_ids]
     respond_to do |format|
       if @teacher.save
 
-        @course_list = @course_list.reject {|f| f == ""}
-        @course_list.each do |courseid|
-          @result = @teacher.teachercourses.create(course_id: courseid, teacher_id: @teacher.id)
-        end
+        # @course_list = @course_list.reject {|f| f == ""}
+        # @course_list.each do |courseid|
+        #   byebug
+        #   @result = @teacher.teachercourses.create(course_id: courseid, teacher_id: @teacher.id)
+        # end
         format.html {redirect_to @teacher, notice: 'Teacher was successfully created.'}
         format.json {render :show, status: :created, location: @teacher}
       else
@@ -55,13 +56,13 @@ class TeachersController < ApplicationController
   def update
     respond_to do |format|
       if @teacher.update(teacher_params)
-        @result = Teachercourse.where('teacher_id=?', params[:id]).destroy_all
-        @course_list = params[:teacher][:course_ids]
-
-        @course_list = @course_list.reject {|f| f == ""}
-        @course_list.each do |courseid|
-          @result = @teacher.teachercourses.create(course_id: courseid, teacher_id: @teacher.id)
-        end
+        # @result = Teachercourse.where('teacher_id=?', params[:id]).destroy_all
+        # @course_list = params[:teacher][:course_ids]
+        #
+        # @course_list = @course_list.reject {|f| f == ""}
+        # @course_list.each do |courseid|
+        #   @result = @teacher.teachercourses.create(course_id: courseid, teacher_id: @teacher.id)
+        # end
 
 
         format.html {redirect_to @teacher, notice: 'Teacher was successfully updated.'}
@@ -107,6 +108,6 @@ class TeachersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def teacher_params
-    params.require(:teacher).permit(:name, :age, :phone, :email)
+    params.require(:teacher).permit(:name, :age, :phone, :email, course_ids:[])
   end
 end
