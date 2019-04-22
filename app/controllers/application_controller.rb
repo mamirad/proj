@@ -10,11 +10,27 @@ class ApplicationController < ActionController::Base
 
 	def user_not_authorized
 
-		flash[:notice] = "You are not authorized to perform this action"
+	#	flash[:notice] = "You are not authorized to perform this action"
+# byebug
+	#
+		if !Board.all.any?
+			flash[:notice] = "You are not authorized ,create board firstly"
+			redirect_to new_board_path
+		elsif !Group.all.any?
+			flash[:notice] = "You are not authorized to perform this action create Class firstly"
+			redirect_to new_group_path
+		elsif !Course.all.any?
+		flash[:notice] = "You are not authorized to perform this action create Course firstly"
+		redirect_to new_course_path
+		end
+		# unless Group.all.any?
+		# 	flash[:notice] = "You are not authorized to perform this action create Class firstly"
+		# end
+		# unless Course.all.any?
+		# 	flash[:notice] = "You are not authorized to perform this action create Course firstly"
+		# end
 
-
-
-		redirect_to(request.referrer || root_path)
+		#redirect_to(request.referrer || root_path)
 
 
 	end
