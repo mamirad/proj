@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_132019) do
+ActiveRecord::Schema.define(version: 2019_04_22_072529) do
 
   create_table "boardgroups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 2019_04_17_132019) do
     t.index ["teachercourse_id"], name: "index_mcqs_on_teachercourse_id"
   end
 
+  create_table "multipul_questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "question"
+    t.string "option1"
+    t.string "option2"
+    t.string "option3"
+    t.string "option4"
+    t.string "option5"
+    t.string "option6"
+    t.bigint "teachercourse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teachercourse_id"], name: "index_multipul_questions_on_teachercourse_id"
+  end
+
   create_table "teachercourses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "course_id"
     t.bigint "teacher_id"
@@ -94,6 +108,7 @@ ActiveRecord::Schema.define(version: 2019_04_17_132019) do
   add_foreign_key "boards", "users"
   add_foreign_key "courses", "boardgroups"
   add_foreign_key "mcqs", "teachercourses"
+  add_foreign_key "multipul_questions", "teachercourses"
   add_foreign_key "teachercourses", "courses"
   add_foreign_key "teachercourses", "teachers"
 end

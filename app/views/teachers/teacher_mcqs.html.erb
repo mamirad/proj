@@ -16,7 +16,7 @@
   <tbody>
   <% @teacher_courses.each do |teachercourse| %>
 
-    <% teachercourse.mcqs.each do |a| %>
+    <% teachercourse.multipul_questions.each do |a| %>
   <tr>
     <td> <%=a.teachercourse.course.name %></td>
     <td> <%=a.teachercourse.course.boardgroup.board.name %></td>

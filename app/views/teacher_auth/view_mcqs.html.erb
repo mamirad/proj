@@ -7,6 +7,7 @@
     <th>Option#4</th>
     <th>Option#5</th>
     <th>Option#6</th>
+    <th>course Name</th>
   </tr>
   <%@mcqs.each do |mcq| %>
   <tr>
@@ -17,6 +18,7 @@
     <td><%=mcq.option4 %></td>
     <td><%=mcq.option5 %></td>
     <td><%=mcq.option6 %></td>
+    <td><%=mcq.teachercourse.course.name %></td>
     <td><%=link_to 'edit',edit_mcq_path(mcq.id) %></td>
     <td><%= link_to 'Delete',
                     delete_mcq_path(mcq),

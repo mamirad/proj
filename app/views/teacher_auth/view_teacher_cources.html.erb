@@ -10,7 +10,7 @@
       <td><%= teacher_course.course.name %></td>
       <td><%= teacher_course.course.boardgroup.board.name %></td>
       <td><%= teacher_course.course.boardgroup.group.name %></td>
-      <td><%= link_to 'create mcq',new_mcq_path(teacher_course),class:"btn btn-default btn-xs" %></td>
+      <td><%= link_to 'create mcq',new_multipul_question_path(teacher_course),class:"btn btn-default btn-xs" %></td>
       <td><%= link_to 'view mcqs',view_mcqs_path(teacher_course),class:"btn btn-default btn-xs" %></td>
     </tr>
 

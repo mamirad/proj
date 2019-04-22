@@ -30,7 +30,7 @@ class TeacherAuthController < ApplicationController
   end
 
   def view_mcqs
-    @mcqs = Teachercourse.find(params[:teachercource]).mcqs
+    @mcqs = Teachercourse.find(params[:teachercource]).multipul_questions
     # byebug
   end
 
