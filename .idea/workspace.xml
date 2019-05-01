@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a6d4c0d-4b77-49ad-9fad-3047a9d41a83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/my_cocoon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/board_certification.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/board_certification.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/adminlte/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/adminlte/daterangepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/adminlte/jquery.sparkline.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/adminlte/jquery.sparkline.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/groups.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/groups.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/multipul_questions.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/multipul_questions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/multipul_questions_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/teacher_auth_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/teacher_auth_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/teachers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/teachers_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/multipul_questions_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/multipul_question.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/teachercourse.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/teachercourse.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/boards/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/boards/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/courses/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/courses/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/custom_layouts/adminlayout.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/custom_layouts/adminlayout.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/custom_layouts/punjablayout.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/custom_layouts/proof_reader.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/custom_layouts/teacherlayout.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/custom_layouts/teacherlayout.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/header/federal_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/header/proof_reader_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/menu/federal_menu.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/menu/proof_reader_menu.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/_multipul_question.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/multipul_questions/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/view_mcqs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/view_mcqs.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teacher_auth/view_teacher_cources.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teacher_auth/view_teacher_cources.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teachers/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teachers/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/teachers/teacher_mcqs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/teachers/teacher_mcqs.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190422072529_create_multipul_questions.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/multipul_questions_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/multipul_questions.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/multipul_question_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/multipul_questions_test.rb" beforeDir="false" />
-    </list>
+    <list default="true" id="2a6d4c0d-4b77-49ad-9fad-3047a9d41a83" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -179,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="72" />
     <option name="y" value="47" />
     <option name="width" value="1167" />
@@ -374,15 +324,15 @@
       <workItem from="1555912431478" duration="28298000" />
       <workItem from="1555997975990" duration="33304000" />
       <workItem from="1556086706610" duration="33551000" />
-      <workItem from="1556690306825" duration="3383000" />
+      <workItem from="1556690306825" duration="3660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157185000" />
+    <option name="totallyTimeSpent" value="157462000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="25" width="1305" height="743" extended-state="6" />
+    <frame x="61" y="25" width="1305" height="743" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26846704" />
