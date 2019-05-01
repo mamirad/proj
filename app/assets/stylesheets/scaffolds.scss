@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  
+
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -82,9 +82,7 @@ div {
 label {
   display: block;
 }
-.invalid-feedback{
-  color:red;
-}
 .select2-selection__choice{
-  color:black !important;
+
+  background-color: #00a65a !important;
 }

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyString
+  status: false
+  question_paper: one
+
+two:
+  comment: MyString
+  status: false
+  question_paper: two

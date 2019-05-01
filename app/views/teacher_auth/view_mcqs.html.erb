@@ -1,32 +1,60 @@
-<table class="table table-bordered">
-  <tr>
-    <th>Questions</th>
-    <th>Option#1</th>
-    <th>Option#2</th>
-    <th>Option#3</th>
-    <th>Option#4</th>
-    <th>Option#5</th>
-    <th>Option#6</th>
-    <th>course Name</th>
-  </tr>
-  <%@mcqs.each do |mcq| %>
-  <tr>
-    <td><%=mcq.question %></td>
-    <td><%=mcq.option1 %></td>
-    <td><%=mcq.option2 %></td>
-    <td><%=mcq.option3 %></td>
-    <td><%=mcq.option4 %></td>
-    <td><%=mcq.option5 %></td>
-    <td><%=mcq.option6 %></td>
-    <td><%=mcq.teachercourse.course.name %></td>
-    <td><%=link_to 'edit',edit_mcq_path(mcq.id) %></td>
-    <td><%= link_to 'Delete',
-                    delete_mcq_path(mcq),
-                    method: :delete,
-                    data: { confirm_swal: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
-</table>
+<h1>Question Papers</h1>
 
 
-<td><%=link_to 'go back',view_teacher_cources_path %></td>
+
+
+
+<% @question_paper.each do |question_paper| %>
+
+  <div style="border-bottom: 2px solid gray">
+    <table class="table table-bordered">
+
+      <tr>
+        <th>paper title</th>
+        <td><%= question_paper.name %></td>
+      </tr>
+      <tr>
+        <th>Course</th>
+        <td> <%= question_paper.teachercourse.course.name %></td>
+      </tr>
+
+
+
+
+
+
+      <% question_paper.question_answers.each do |qa| %>
+        <tr>
+          <th>Question: <%= qa.question %></th>
+          <td>Answer: <%= qa.answer %></td>
+
+          <% qa.options.each do |option| %>
+            <td><%= option.opt %></td>
+          <% end %>
+        </tr>
+      <% end %>
+
+
+    </table>
+
+
+    <table class="table table-bordered" style="width: 50%;">
+      <% question_paper.qp_comments.each do |cmt| %>
+
+        <tr>
+          <th style="width:100%;"><%= cmt.comment %></th>
+          <th style="width:100%;"><%= cmt.status %></th>
+          <th style="width:100%;"><%= cmt.user.role %></th>
+        </tr>
+
+      <% end %>
+    </table>
+
+
+    <%= link_to 'Edit', edit_question_paper_path(question_paper), class: 'btn btn-default btn-xs' %> |
+    <td><%= link_to 'Destroy', question_paper, method: :delete, data: {confirm_swal: 'Are you sure?'}, class: 'btn btn-default btn-xs' %></td>
+    <%= link_to 'Back', question_papers_path, class: 'btn btn-default btn-xs' %>
+    <br>
+  </div>
+
+<% end %>

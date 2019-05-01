@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @qp_comment.comment %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @qp_comment.status %>
+</p>
+
+<p>
+  <strong>Question paper:</strong>
+  <%= @qp_comment.question_paper.name %>
+</p>
+
+<%= link_to 'Edit', edit_qp_comment_path(@qp_comment) %> |
+<%= link_to 'Back', qp_comments_path %>

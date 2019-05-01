@@ -1,5 +1,11 @@
 class TeachersController < ApplicationController
-  layout "custom_layouts/adminlayout"
+   # layout "custom_layouts/adminlayout"
+  layout :determine_layout
+
+
+
+
+
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   after_action :teacher_signup, only: [:create]
 
@@ -86,6 +92,7 @@ class TeachersController < ApplicationController
 
   def teacher_mcqs
     @teacher_courses = Teacher.find(params[:teacher_id]).teachercourses
+
   end
 
 
@@ -110,4 +117,21 @@ class TeachersController < ApplicationController
   def teacher_params
     params.require(:teacher).permit(:name, :age, :phone, :email, course_ids:[])
   end
+
+
+  def determine_layout
+    #byebug
+    case current_user.role
+
+    when 'admin' #compare to 1
+      # 'custom_layouts/adminlayout'
+      "custom_layouts/adminlayout"
+    when 'proof_reader' #compare to 2
+      "custom_layouts/proof_reader"
+
+    end
+  end
+
+
 end
+

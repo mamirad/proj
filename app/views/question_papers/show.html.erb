@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-bordered">
+
+ <tr>
+   <th>paper title</th>
+   <td><%= @question_paper.name %></td>
+ </tr>
+ <tr>
+   <th>Course</th>
+   <td> <%= @question_paper.teachercourse.course.name %></td>
+ </tr>
+
+
+
+
+
+
+    <%@question_paper.question_answers.each do |qa| %>
+    <tr>
+      <th>Question: <%= qa.question %></th>
+      <td>Answer: <%= qa.answer %></td>
+
+      <%qa.options.each do |option| %>
+        <td><%= option.opt %></td>
+      <%end %>
+    </tr>
+    <%end %>
+
+
+
+
+
+
+
+</table>
+
+
+<%= link_to 'Edit', edit_question_paper_path(@question_paper) %> |
+<%= link_to 'Back', question_papers_path %>

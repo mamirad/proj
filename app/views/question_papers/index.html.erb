@@ -1,0 +1,67 @@
+<h1>Question Papers</h1>
+
+<!--<table class="responsive nowrap table table-hover" id="dttb-question_papers" data-sort="true" data-source="<%#= url_for(format: :json)%>">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th data-data="name">Name</th>-->
+<!--      <th data-data="teachercourse">Teachercourse</th>-->
+<!--      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--</table>-->
+
+<!--<br>-->
+
+<%#= link_to 'New Question Paper', new_question_paper_path %>
+
+
+
+<% Teacher.where('email=?', current_user.email).first.teachercourses.each do |tc| %>
+  <% tc.question_papers.each do |question_paper| %>
+
+    <table class="table table-bordered">
+
+      <tr>
+        <th>paper title</th>
+        <td><%= question_paper.name %></td>
+      </tr>
+      <tr>
+        <th>Course</th>
+        <td> <%= question_paper.teachercourse.course.name %></td>
+      </tr>
+
+
+      <tr>
+        <th>Course</th>
+        <td> <%= question_paper.teachercourse.course.name %></td>
+      </tr>
+
+
+
+      <% question_paper.question_answers.each do |qa| %>
+        <tr>
+          <th>Question: <%= qa.question %></th>
+          <td>Answer: <%= qa.answer %></td>
+
+          <% qa.options.each do |option| %>
+            <td><%= option.opt %></td>
+          <% end %>
+        </tr>
+      <% end %>
+
+
+    </table>
+
+
+    <%= link_to 'Edit', edit_question_paper_path(question_paper) %> |
+    <td><%= link_to 'Destroy', question_paper, method: :delete, data: { confirm_swal: 'Are you sure?' } %></td>
+    <%= link_to 'Back', question_papers_path %>
+
+
+
+
+
+
+  <% end %>
+<% end %>

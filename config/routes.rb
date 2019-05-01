@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'proof_reader/home'
+  resources :qp_comments, :except=>[:new]
+  get '/qp_comment/new/:qp_id', to: 'qp_comments#new', as: 'new_qp_comment'
+  resources :question_papers, :except=>[:new]
+  get '/question_papers/new/:teachercourse', to: 'question_papers#new', as: 'new_question_paper'
+
   get '/multipul_questions/new/:teachercourse', to: 'multipul_questions#new', as: 'new_multipul_question'
   resources :multipul_questions, :except=>[:new]
   root 'admin#home'
   get 'teacher_auth/home'
+
   resources :teachers
   resources :courses
   resources :groups
