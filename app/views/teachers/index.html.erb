@@ -32,7 +32,7 @@
           </li>
         <% end %>
       </td>
-      <td><%= link_to 'view mcqs', teacher_mcqs_path(teacher) %></td>
+      <td><%= link_to 'view questions', teacher_questions_path(teacher) %></td>
       <% if current_user.role == 'admin' %>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
@@ -45,7 +45,7 @@
 
 <br>
 
-
+<%= link_to 'Back', 'javascript:history.go(-1);' %>
 <% if current_user.role == 'admin' %>
   <%= link_to 'New Teacher', new_teacher_path %>
 <% end %>

@@ -25,7 +25,6 @@ class Boardgroup < ApplicationRecord
   def board_groups_attr
     a = Boardgroup.find(id).board.name
     b = Boardgroup.find(id).group.name
-
     "#{a}------ #{b}"
   end
 

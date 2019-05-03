@@ -1,0 +1,30 @@
+
+<%= simple_form_for(@course_question) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.select :questiontype, [["Select type of question", ],["Fill in the blank", 1], ["True / False", 2],["MCQ",3],[" Descriptive",4]] ,{},class:"form-control", include_blank: true%>
+
+
+
+<!--    <input class="form-control string optional" type="text" name="course_question[question]" id="course_question_question">-->
+<!--<input class="form-control string optional" type="text" name="course_question[answer]" id="course_question_answer"> -->
+    <%#= f.input :question %>
+    <div id="dynamic_question">
+
+    </div>
+    <%#= f.input :answer %>
+    <%#= f.input :option1 %>
+    <%#= f.input :option2 %>
+    <%#= f.input :option3 %>
+    <%#= f.input :option4 %>
+    <%#= f.input :option5 %>
+    <%#= f.input :type %>
+    <%#= f.association :teachercourse %>
+  </div>
+<br><br>
+  <div class="form-actions">
+    <%= f.button :submit,id: 'submit_dynamic_question' %>
+  </div>
+<% end %>

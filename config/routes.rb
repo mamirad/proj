@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
-
+  resources :question_comments
+   get '/question_comments/new/:question_id', to: 'question_comments#new', as: 'new_question_comments'
+  resources :question_comments, :except=>[:new]
+  get '/course_questions/new/:teachercourse', to: 'course_questions#new', as: 'new_course_question'
+  resources :course_questions, :except=>[:new]
   get 'proof_reader/home'
-  resources :qp_comments, :except=>[:new]
-  get '/qp_comment/new/:qp_id', to: 'qp_comments#new', as: 'new_qp_comment'
-  resources :question_papers, :except=>[:new]
-  get '/question_papers/new/:teachercourse', to: 'question_papers#new', as: 'new_question_paper'
 
-  get '/multipul_questions/new/:teachercourse', to: 'multipul_questions#new', as: 'new_multipul_question'
-  resources :multipul_questions, :except=>[:new]
+
+
+
+  
+  # resources :qp_comments, :except=>[:new]
+  # get '/qp_comment/new/:qp_id', to: 'qp_comments#new', as: 'new_qp_comment'
+  # resources :question_papers, :except=>[:new]
+  # get '/question_papers/new/:teachercourse', to: 'question_papers#new', as: 'new_question_paper'
+  #
+  # get '/multipul_questions/new/:teachercourse', to: 'multipul_questions#new', as: 'new_multipul_question'
+  # resources :multipul_questions, :except=>[:new]
+  #
+  #
+  #
   root 'admin#home'
   get 'teacher_auth/home'
 
@@ -23,7 +35,7 @@ Rails.application.routes.draw do
   get '/new_mcq/:teachercource', to: 'teacher_auth#new_mcq', as: 'new_mcq'
   post '/create_mcq/:teachercource', to: 'teacher_auth#create_mcq', as: 'create_mcq'
 
-  get '/view_mcqs/:teachercource', to: 'teacher_auth#view_mcqs', as: 'view_mcqs'
+  get '/view_questions/:teachercource', to: 'teacher_auth#view_questions', as: 'view_questions'
   get '/edit_mcq/:mcq_id', to: 'teacher_auth#edit_mcq', as: 'edit_mcq'
   delete '/delete_mcq/:mcq_id', to: 'teacher_auth#delete_mcq', as: 'delete_mcq'
 
@@ -31,7 +43,7 @@ Rails.application.routes.draw do
 
   get '/show_mcq/:mcq_id', to: 'teacher_auth#show_mcq', as: 'show_mcq'
 
-  get '/teacher_mcqs/:teacher_id', to: 'teachers#teacher_mcqs', as: 'teacher_mcqs'
+  get '/teacher_questions/:teacher_id', to: 'teachers#teacher_questions', as: 'teacher_questions'
 
 
 

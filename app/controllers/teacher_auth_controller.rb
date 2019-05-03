@@ -29,8 +29,8 @@ class TeacherAuthController < ApplicationController
 
   end
 
-  def view_mcqs
-    @question_paper = Teachercourse.find(params[:teachercource]).question_papers
+  def view_questions
+    @course_questions = Teachercourse.find(params[:teachercource]).course_questions
     # byebug
   end
 

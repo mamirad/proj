@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_132550) do
+ActiveRecord::Schema.define(version: 2019_05_03_073307) do
 
   create_table "boardgroups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 2019_04_24_132550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "course_questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.string "option1"
+    t.string "option2"
+    t.string "option3"
+    t.string "option4"
+    t.string "option5"
+    t.string "questiontype"
+    t.bigint "teachercourse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teachercourse_id"], name: "index_course_questions_on_teachercourse_id"
   end
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,40 +72,15 @@ ActiveRecord::Schema.define(version: 2019_04_24_132550) do
     t.index ["teachercourse_id"], name: "index_mcqs_on_teachercourse_id"
   end
 
-  create_table "options", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "opt"
-    t.bigint "question_answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_answer_id"], name: "index_options_on_question_answer_id"
-  end
-
-  create_table "qp_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "question_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
     t.boolean "status"
-    t.bigint "question_paper_id"
+    t.bigint "course_question_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_paper_id"], name: "index_qp_comments_on_question_paper_id"
-    t.index ["user_id"], name: "index_qp_comments_on_user_id"
-  end
-
-  create_table "question_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "question_paper_id"
-    t.string "question"
-    t.string "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_paper_id"], name: "index_question_answers_on_question_paper_id"
-  end
-
-  create_table "question_papers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.bigint "teachercourse_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["teachercourse_id"], name: "index_question_papers_on_teachercourse_id"
+    t.index ["course_question_id"], name: "index_question_comments_on_course_question_id"
+    t.index ["user_id"], name: "index_question_comments_on_user_id"
   end
 
   create_table "teachercourses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -128,13 +118,11 @@ ActiveRecord::Schema.define(version: 2019_04_24_132550) do
   add_foreign_key "boardgroups", "boards"
   add_foreign_key "boardgroups", "groups"
   add_foreign_key "boards", "users"
+  add_foreign_key "course_questions", "teachercourses"
   add_foreign_key "courses", "boardgroups"
   add_foreign_key "mcqs", "teachercourses"
-  add_foreign_key "options", "question_answers"
-  add_foreign_key "qp_comments", "question_papers"
-  add_foreign_key "qp_comments", "users"
-  add_foreign_key "question_answers", "question_papers"
-  add_foreign_key "question_papers", "teachercourses"
+  add_foreign_key "question_comments", "course_questions"
+  add_foreign_key "question_comments", "users"
   add_foreign_key "teachercourses", "courses"
   add_foreign_key "teachercourses", "teachers"
 end

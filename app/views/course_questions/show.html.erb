@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @course_question.question %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @course_question.answer %>
+</p>
+
+<p>
+<!--  <strong>Option1:</strong>-->
+  <%= @course_question.option1  %>
+</p>
+
+<p>
+<!--  <strong>Option2:</strong>-->
+  <%= @course_question.option2 %>
+</p>
+
+<p>
+<!--  <strong>Option3:</strong>-->
+  <%= @course_question.option3 %>
+</p>
+
+<p>
+<!--  <strong>Option4:</strong>-->
+  <%= @course_question.option4 %>
+</p>
+
+<p>
+<!--  <strong>Option5:</strong>-->
+  <%= @course_question.option5 %>
+</p>
+
+<p>
+  <strong>Question Type:</strong>
+
+
+  <% if  @course_question.questiontype.to_i==1 %>Fill in the blank<%end %>
+  <% if  @course_question.questiontype.to_i==2 %>true false<%end %>
+  <% if  @course_question.questiontype.to_i==3%>mcq<%end %>
+  <% if  @course_question.questiontype.to_i==4 %>descriptive<%end %>
+
+</p>
+
+<p>
+  <strong>Teachercourse:</strong>
+  <%= @course_question.teachercourse.course.name %>
+</p>
+<%= link_to 'Back', 'javascript:history.go(-1);' %>
+<%= link_to 'Edit', edit_course_question_path(@course_question) %> |
+<%= link_to 'view_teacher_cources', view_teacher_cources_path %>|
+<%= link_to 'All questions', course_questions_path %>
+
+
+

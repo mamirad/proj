@@ -1,0 +1,263 @@
+<h1>Questions</h1>
+
+
+<table class="responsive nowrap table table-hover" id="dttb-course_questions" data-sort="true" data-source="<%= url_for(format: :json) %>">
+  <thead>
+  <tr>
+    <th data-data="question">Question</th>
+    <th data-data="answer">Answer</th>
+    <th data-data="type">Type</th>
+    <th data-data="option1">Option1</th>
+    <th data-data="option2">Option2</th>
+    <th data-data="option3">Option3</th>
+    <th data-data="option4">Option4</th>
+    <th data-data="option5">Option5</th>
+
+
+    <th data-data="teachercourse">Teachercourse</th>
+    <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @teacher_courses.each do |teachercourse| %>
+    <% teachercourse.course_questions.each do |q| %>
+
+      <tr>
+        <td><%= q.question %></td>
+        <td><%= q.answer %></td>
+        <td>
+          <% if q.questiontype.to_i == 1 %>Fill in blank
+          <% end %>
+          <% if q.questiontype.to_i == 2 %>true false
+          <% end %>
+          <% if q.questiontype.to_i == 3 %>mcq
+          <% end %>
+          <% if q.questiontype.to_i == 4 %>descriptive
+          <% end %>
+        </td>
+        <td><%= q.option1 %></td>
+        <td><%= q.option2 %></td>
+        <td><%= q.option3 %></td>
+        <td><%= q.option4 %></td>
+        <td><%= q.option5 %></td>
+        <td><%= q.teachercourse.course.name %></td>
+
+      </tr>
+      <td><%= link_to 'Add comment', new_question_comments_path(q), class: 'btn btn-success btn-xs' %></td>
+
+
+
+        <% q.question_comments.each do |cmt| %>
+
+          <tr style="border-bottom:2px solid red;">
+            <th><%= cmt.comment %></th>
+            <th><%= cmt.status %></th>
+            <th><%= cmt.user.role %></th>
+          </tr>
+        <% end %>
+
+
+
+
+
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
+
+<%= link_to 'Back', 'javascript:history.go(-1);' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Question Papers</h1>-->
+<%# @teacher_courses.each do |tc| %>
+<%# tc.question_papers.each do |question_paper| %>
+
+<!--    <table class="table table-bordered">-->
+
+<!--      <tr>-->
+<!--        <th>paper title</th>-->
+<!--        <td><%#= question_paper.name %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th>Course</th>-->
+<!--        <td> <%#= question_paper.teachercourse.course.name %></td>-->
+<!--      </tr>-->
+
+
+
+
+
+
+<%# question_paper.question_answers.each do |qa| %>
+<!--        <tr>-->
+<!--          <th>Question: <%#= qa.question %></th>-->
+<!--          <td>Answer: <%#= qa.answer %></td>-->
+
+<%# qa.options.each do |option| %>
+<!--            <td><%#= option.opt %></td>-->
+<%# end %>
+<!--        </tr>-->
+<%# end %>
+
+
+<!--    </table>-->
+
+
+<%#= link_to 'comment', new_qp_comment_path(question_paper), class: 'btn btn-success btn-xs' %>
+<!--    <table class="table table-bordered" style="width: 50%; border-bottom: 5px solid gray">-->
+<!--      <tr>-->
+<!--        <th>Comment</th>-->
+<!--        <th>Status</th>-->
+
+<!--      </tr>-->
+<%# question_paper.qp_comments.each do |cmt| %>
+
+
+<!--        <tr>-->
+<!--          <td><%#= cmt.comment %></td>-->
+<!--          <td><%#= cmt.status %></td>-->
+
+<!--        </tr>-->
+
+<%# end %>
+<!--    </table>-->
+
+<!--        <%##= link_to 'Edit', edit_question_paper_path(question_paper) %> |-->-->
+<!--       <td><%##= link_to 'Destroy', question_paper, method: :delete, data: { confirm_swal: 'Are you sure?' } %></td>-->-->
+<%#= link_to 'Back', 'javascript:history.go(-1);' %>
+<%#= link_to 'Teachers', teachers_path %>
+
+
+
+
+
+
+<%# end %>
+<%# end %>
+
+
+
+
+
+
+
+
+
+<!--<h1>Question Papers</h1>-->
+<%# @teacher_courses.each do |tc| %>
+<%# tc.question_papers.each do |question_paper| %>
+
+<!--    <table class="table table-bordered">-->
+
+<!--      <tr>-->
+<!--        <th>paper title</th>-->
+<!--        <td><%#= question_paper.name %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th>Course</th>-->
+<!--        <td> <%#= question_paper.teachercourse.course.name %></td>-->
+<!--      </tr>-->
+
+
+
+
+
+
+<%# question_paper.question_answers.each do |qa| %>
+<!--        <tr>-->
+<!--          <th>Question: <%#= qa.question %></th>-->
+<!--          <td>Answer: <%#= qa.answer %></td>-->
+
+<%# qa.options.each do |option| %>
+<!--            <td><%#= option.opt %></td>-->
+<%# end %>
+<!--        </tr>-->
+<%# end %>
+
+
+<!--    </table>-->
+
+
+<%#= link_to 'comment', new_qp_comment_path(question_paper), class: 'btn btn-success btn-xs' %>
+<!--    <table class="table table-bordered" style="width: 50%; border-bottom: 5px solid gray">-->
+<!--      <tr>-->
+<!--        <th>Comment</th>-->
+<!--        <th>Status</th>-->
+
+<!--      </tr>-->
+<%# question_paper.qp_comments.each do |cmt| %>
+
+
+<!--        <tr>-->
+<!--          <td><%#= cmt.comment %></td>-->
+<!--          <td><%#= cmt.status %></td>-->
+
+<!--        </tr>-->
+
+<%# end %>
+<!--    </table>-->
+
+<!--        <%##= link_to 'Edit', edit_question_paper_path(question_paper) %> |-->-->
+<!--       <td><%##= link_to 'Destroy', question_paper, method: :delete, data: { confirm_swal: 'Are you sure?' } %></td>-->-->
+<%#= link_to 'Back', 'javascript:history.go(-1);' %>
+<%#= link_to 'Teachers', teachers_path %>
+
+
+
+
+
+
+<%# end %>
+<%# end %>

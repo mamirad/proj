@@ -90,7 +90,7 @@ class TeachersController < ApplicationController
     end
   end
 
-  def teacher_mcqs
+  def teacher_questions
     @teacher_courses = Teacher.find(params[:teacher_id]).teachercourses
 
   end
