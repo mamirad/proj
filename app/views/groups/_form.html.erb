@@ -5,9 +5,10 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.association :boards,collection: Board.where('id=?', 2)%>
+    <%= f.association :boards%>
 
 
+    <%#= f.association :boards,collection: Board.where('id=?', 2)%>
 
 
   </div>
