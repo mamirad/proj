@@ -4,6 +4,6 @@ class Board < ApplicationRecord
   has_many :groups, through: :boardgroups
 
 
-  	  validates :name, uniqueness: true
-  	  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :name, presence: true
 end

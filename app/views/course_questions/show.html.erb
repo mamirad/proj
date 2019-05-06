@@ -50,10 +50,10 @@
   <strong>Teachercourse:</strong>
   <%= @course_question.teachercourse.course.name %>
 </p>
-<%= link_to 'Back', 'javascript:history.go(-1);' %>
-<%= link_to 'Edit', edit_course_question_path(@course_question) %> |
-<%= link_to 'view_teacher_cources', view_teacher_cources_path %>|
-<%= link_to 'All questions', course_questions_path %>
+<%= link_to 'Back', 'javascript:history.go(-1);',class: 'btn btn-default btn-xs' %>|
+<%= link_to 'Edit', edit_course_question_path(@course_question) ,class: 'btn btn-default btn-xs'%> |
+<%= link_to 'view_teacher_cources', view_teacher_cources_path ,class: 'btn btn-default btn-xs'%>|
+<%= link_to 'All questions', course_questions_path,class: 'btn btn-default btn-xs' %>
 
 
 
