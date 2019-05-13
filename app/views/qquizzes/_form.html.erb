@@ -1,0 +1,35 @@
+
+<%= simple_form_for(@qquiz) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <% if @qquiz.errors.any? %>
+    <ul>
+      <% @qquiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="form-inputs">
+    <%= f.input :expire_date, as: :date, html5: true %>
+    <%#=f.association :course_questions,label_method: :question, as: :check_boxes,collection: @abc%>
+    <%
+    @abc=[]
+    CourseQuestion.where('teachercourse_id=?',session[:teachercourse]).each do |cq|
+
+
+    unless cq.question_comments.where('status=?',1).empty?
+
+    @abc.push(cq)
+
+    end
+
+    end
+    %>
+    <%=f.association :course_questions,label_method: :question, as: :check_boxes,collection: @abc%>
+    <%#= f.association :teachercourse %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

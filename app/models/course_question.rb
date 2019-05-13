@@ -4,4 +4,25 @@ class CourseQuestion < ApplicationRecord
   validates :answer, presence: true
 
   has_many :question_comments
+
+
+
+
+
+
+
+  def name_of_method
+
+    a = CourseQuestion.find(id)
+
+    "#{a}------ "
+  end
+
+
+
+
+
+
+
+
 end

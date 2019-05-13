@@ -12,6 +12,9 @@
       <td><%= teacher_course.course.boardgroup.group.name %></td>
       <td><%= link_to 'create Question',new_course_question_path(teacher_course),class:"btn btn-default btn-xs" %></td>
       <td><%= link_to 'view questions',view_questions_path(teacher_course),class:"btn btn-default btn-xs" %></td>
+      <td><%= link_to 'Create Quiz',new_qquizzes_path(teacher_course),class:"btn btn-default btn-xs" unless teacher_course.course_questions.empty?%></td>
+      <td><%= link_to 'View Quiz',view_quizs_path(teacher_course),class:"btn btn-default btn-xs" unless teacher_course.course_questions.empty?%></td>
+
     </tr>
 
   <% end %>

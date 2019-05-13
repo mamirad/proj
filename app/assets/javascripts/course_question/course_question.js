@@ -51,7 +51,7 @@ function fill_in_the_blank() {
 
 function true_false() {
     document.getElementById("dynamic_question").innerHTML = '<label>True False</label><input class="form-control string optional" type="text" name="course_question[question]" id="course_question_question" placeholder="There are 5 rivers in pakistan"><label>Answer</label><input class="" type="checkbox" name="course_question[answer]" id="course_question_answer"><input class="form-control string optional" type="hidden" name="course_question[option1]" id="course_question_option1"><input class="form-control string optional" type="hidden" name="course_question[option2]" id="course_question_option2"><input class="form-control string optional" type="hidden" name="course_question[option3]" id="course_question_option3"><input class="form-control string optional" type="hidden" name="course_question[option4]" id="course_question_option4"><input class="form-control string optional" type="hidden" name="course_question[option5]" id="course_question_option5">'
-    $('input').removeClass( "optional" ).addClass('form-control is-valid string required');
+    $('input').removeClass( "optional" ).addClass('is-valid string required');
     $("input").prop('required',true);
 }
 

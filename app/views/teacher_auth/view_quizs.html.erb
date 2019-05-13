@@ -4,53 +4,47 @@
 <table class="responsive nowrap table table-hover" id="dttb-course_questions" data-sort="true" data-source="<%= url_for(format: :json)%>">
   <thead>
   <tr>
-    <th data-data="question">Question</th>
-    <th data-data="answer">Answer</th>
-    <th data-data="type">Type</th>
-    <th data-data="option1">Option1</th>
-    <th data-data="option2">Option2</th>
-    <th data-data="option3">Option3</th>
-    <th data-data="option4">Option4</th>
-    <th data-data="option5">Option5</th>
+    <th data-data="question">Quiz code</th>
+    <th data-data="answer">Expire Date</th>
+    <th data-data="option1">Questions</th>
+    <th data-data="type">Teacher course</th>
 
-    <th data-data="teachercourse">Teachercourse</th>
-    <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
-  </tr>
+ </tr>
   </thead>
   <tbody>
 
-  <%@course_questions.each do |q| %>
+  <%@qquizs.each do |quiz| %>
+
+
+
     <tr>
-      <td><%=q.question %></td>
-      <td><%=q.answer %></td>
+      <td> <%= quiz.id %></td>
+      <td><%= quiz.expire_date %></td>
       <td>
-        <% if q.questiontype.to_i==1 %>Fill in blank<%end %>
-        <% if q.questiontype.to_i==2 %>true false<%end %>
-        <% if q.questiontype.to_i==3%>mcq<%end %>
-        <% if q.questiontype.to_i==4 %>descriptive<%end %>
+        <%quiz.course_questions.each do |quiz_question| %>
+              <ul>
+                <li><%=quiz_question.question %></li>
+              </ul>
+        <%end %>
       </td>
-      <td><%=q.option1 %></td>
-      <td><%=q.option2 %></td>
-      <td><%=q.option3 %></td>
-      <td><%=q.option4 %></td>
-      <td><%=q.option5 %></td>
-      <td><%=q.teachercourse.course.name %></td>
-      <td><%=link_to 'Show', course_question_path(q) %> </td>
-<!--      Edit button will be removed if all comment are ture-->
-      <td><%=link_to 'Edit', edit_course_question_path(q) if q.question_comments.where('status=?',1).empty?
-      %></td>
-      <td><%=link_to 'Delete', course_question_path(q), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+=
+      <td><%=quiz.teachercourse.course.name %></td>
 
+      <td><%= link_to 'Mark Quiz',mark_quiz_path(quiz),class:"btn btn-default btn-xs"%></td>
+
+         <td><%= link_to 'Edit', edit_qquiz_path(quiz) %> |
+      <%= link_to 'Back', qquizzes_path %>
+    </td></td>
     </tr>
-    <% q.question_comments.each do |cmt| %>
+    <%# q.question_comments.each do |cmt| %>
 
-      <tr style="background: lightblue">
+<!--      <tr style="background: lightblue">-->
 
-        <th>Comment</th><td ><%= cmt.comment %></td>
-        <th>status</th><td ><%= cmt.status %></td>
-        <th>By</th><td ><%= cmt.user.role %></td>
-      </tr>
-    <% end %>
+<!--        <th>Comment</th><td ><%#= cmt.comment %></td>-->
+<!--        <th>status</th><td ><%#= cmt.status %></td>-->
+<!--        <th>By</th><td ><%#= cmt.user.role %></td>-->
+<!--      </tr>-->
+    <%# end %>
   <% end %>
   </tbody>
 

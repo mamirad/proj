@@ -8,5 +8,9 @@
 #
 #
 #
-User.create(email: 'admin@gmail.com', name: 'Ahmad',role: 'admin', password: 'aaaaaa' )
-User.create(email: 'pr@gmail.com', name: 'zeshan',role: 'proof_reader', password: 'aaaaaa' )
+# User.create(email: 'admin@gmail.com', name: 'Ahmad',role: 'admin', password: 'aaaaaa' )
+# User.create(email: 'pr@gmail.com', name: 'zeshan',role: 'proof_reader', password: 'aaaaaa' )
+#
+#
+
+User.create(email: 'student1@gmail.com', name: 'ikram',role: 'student', password: 'aaaaaa' )

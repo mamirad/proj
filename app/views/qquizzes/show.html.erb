@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Quiz code#:</strong>
+  <%= @qquiz.id %>
+</p>
+
+<p>
+  <strong>Expire date:</strong>
+  <%= @qquiz.expire_date %>
+</p>
+
+<p>
+  <strong>Quiz Question</strong>
+  <%@qquiz.course_questions.each do |quiz_question| %>
+  <ul>
+    <li><%=quiz_question.question %></li>
+  </ul>
+  <%end %>
+</p>
+
+
+<p>
+  <strong>Teachercourse:</strong>
+  <%= @qquiz.teachercourse.course.name %>
+</p>
+
+<%= link_to 'Edit', edit_qquiz_path(@qquiz) %> |
+<%= link_to 'Back', qquizzes_path %>

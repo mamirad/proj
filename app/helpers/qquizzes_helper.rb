@@ -1,0 +1,2 @@
+module QquizzesHelper
+end

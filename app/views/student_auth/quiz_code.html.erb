@@ -1,0 +1,321 @@
+<script>
+    var clear = 0;
+
+    function startTimer(duration, display) {
+        var start = Date.now(),
+            diff,
+            minutes,
+            seconds;
+
+        function timer() {
+            // get the number of seconds that have elapsed since
+            // startTimer() was called
+            diff = duration - (((Date.now() - start) / 1000) | 0);
+
+            // does the same job as parseInt truncates the float
+            minutes = (diff / 60) | 0;
+            seconds = (diff % 60) | 0;
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (clear == 1) {
+                clearInterval(abc);
+                display.textContent = "time complected"
+            }
+            if (minutes == 0 && seconds == 0) {
+                alert('1');
+
+                document.getElementById("nextquestion").click();
+            }
+            // if (minutes == 0 && seconds == 0) {
+            //     clearInterval(abc);
+            // }
+            // if (minutes == 0 && seconds == 30) {
+            //     alert('1');
+            //
+            //     document.getElementById("nextquestion").click();
+            // }
+            // if (minutes != 0 && (seconds == 30 || seconds == 0)) {
+            //     alert('2');
+            //     document.getElementById("nextquestion").click();
+            // }
+
+
+            if (diff <= 0) {
+                // add one second so that the count down starts at the full duration
+                // example 05:00 not 04:59
+                start = Date.now() + 1000;
+            }
+        };
+        // we don't want to wait a full second before the timer starts
+        timer();
+        var abc = setInterval(timer, 1000);
+
+    }
+
+
+    // function timeout() {
+    //     setInterval(function () {
+    //         document.getElementById("nextquestion").click();
+    //     }, 15000);
+    //
+    //     // var aaa=setTimeout(function () {
+    //     //     document.getElementById("nextquestion").click();
+    //     //     alert("test");
+    //     // }, 1000);
+    //     // clearTimeout(aaa);
+    // }
+</script>
+<style>
+  * {
+    box-sizing: border-box
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+    margin: 0
+  }
+
+  .mySlides {
+    display: none
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev, .next {
+    background-color: red;
+  }
+
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+      font-size: 11px
+    }
+  }
+</style>
+
+<div id="result"></div>
+<div id="time"></div>
+<div id="max_time"></div>
+<div class="slideshow-container">
+
+  <!--  <script>timeout()</script>-->
+  <% @quiz_questions.each_with_index do |quiz_question, index| %>
+    <div class="mySlides">
+      <div>0/<%= index %></div>
+      <%= form_tag sol_quiz_path, remote: true, method: :get, id: "quiz" do %>
+
+        <input type="hidden" value=<%= quiz_question.qqid %> name="quizquestionid"/>
+        <input type="hidden" value=<%= quiz_question.qqid %> name="quizquestionid"/>
+        <div>
+          <h1><%= quiz_question.question %></h1>
+          <% if quiz_question.questiontype.to_i == 3 %>
+            options:
+            <h5><%= radio_button_tag 'student_ans', quiz_question.option1 if quiz_question.option1.present? %><%= quiz_question.option1 %></h5>
+            <h5><%= radio_button_tag 'student_ans', quiz_question.option2 if quiz_question.option2.present? %><%= quiz_question.option2 %></h5>
+            <h5><%= radio_button_tag 'student_ans', quiz_question.option3 if quiz_question.option3.present? %><%= quiz_question.option3 %></h5>
+            <h5><%= radio_button_tag 'student_ans', quiz_question.option4 if quiz_question.option4.present? %><%= quiz_question.option4 %></h5>
+            <h5><%= radio_button_tag 'student_ans', quiz_question.option5 if quiz_question.option5.present? %><%= quiz_question.option5 %></h5>
+
+          <% elsif quiz_question.questiontype.to_i == 2 %>
+            <%= check_box("student_ans", "validated") %>
+
+          <% else %>
+            <%= text_field_tag :student_ans, params[:student_ans],
+                               placeholder: "Your answer", autofocus: true,
+                               class: "form-control " %>
+          <% end %>
+          <br>
+          <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+            <i class="fa fa-search"></i> Submit
+          <% end %>
+        </div>
+
+      <% end %>
+
+
+    </div>
+  <% end %>
+
+
+
+  <br><br>
+  <br> <br>
+  <!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+  <a class="next" id="nextquestion" onclick="plusSlides(1)">Skip</a>
+
+</div>
+<br>
+
+<script>
+    var slideIndex = 1;
+    var count = 0;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+
+
+        display = document.querySelector('#time');
+
+        startTimer(30, display);
+
+        var slidelength = document.getElementsByClassName("mySlides").length;
+        if (count != slidelength) {
+            count++;
+            if (count == slidelength) {
+                clear = 1;
+            }
+
+            showSlides(slideIndex += n);
+
+
+        }
+        // var slidelength = document.getElementsByClassName("mySlides").length;
+        // alert("index"+slideIndex);
+
+        // display = document.querySelector('#time');
+        // startTimer((slides.length - slideIndex) * 30, display);
+
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        // for (i = 0; i < dots.length; i++) {
+        //     dots[i].className = dots[i].className.replace(" active", "");
+        // }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+</script>
+<script>
+
+    display2 = document.querySelector('#max_time');
+    var slides = document.getElementsByClassName("mySlides");
+    //
+    // // var fiveMinutes = slides.length * 30,
+    display = document.querySelector('#time');
+    display2.textContent = 'There are ' + slides.length + '  Questions--------each question has 30 sec' + '     Maximum time= ' + slides.length * 30 + ' seconds';
+    startTimer(30, display);
+</script>
+<script>
+    function myStopFunction() {
+        clearInterval(abc);
+    }
+</script>

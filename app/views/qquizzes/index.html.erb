@@ -1,0 +1,40 @@
+<h1>Qquizzes</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-qquizzes" data-sort="true" data-source="<%= url_for(format: :json) %>">
+  <thead>
+  <tr>
+    <th data-data="expire_date">Quiz Code</th>
+    <th data-data="expire_date">Expire date</th>
+    <th data-data="teachercourse">Teachercourse</th>
+    <th data-data="expire_date">Questions</th>
+
+
+  </tr>
+  </thead>
+  <tdboy>
+
+    <% @qquizzes.each do |quiz| %>
+      <tr>
+        <td><%= quiz.id %></td>
+        <td><%= quiz.expire_date %></td>
+        <td><%= quiz.teachercourse.course.name %></td>
+        <td>
+          <% quiz.course_questions.each do |quiz_question| %>
+            <ul>
+              <li><%= quiz_question.question %></li>
+            </ul>
+          <% end %>
+
+        </td>
+        <td><%= link_to 'Edit', edit_qquiz_path(quiz) %> |
+          <%= link_to 'Back', qquizzes_path %>
+        </td>
+      </tr>
+    <% end %>
+  </tdboy>
+
+</table>
+
+<br>
+
+<%#= link_to 'New Qquiz', new_qquiz_path %>

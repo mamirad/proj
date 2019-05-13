@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	 enum role: {admin: 0, teacher: 1, proof_reader:2}
+	 enum role: {admin: 0, teacher: 1, proof_reader:2, student:3}
 	 has_many :boards
 	 has_many :qp_comments
 

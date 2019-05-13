@@ -54,6 +54,8 @@
             <th><%= cmt.comment %></th>
             <th><%= cmt.status %></th>
             <th><%= cmt.user.role %></th>
+            <th><%=link_to 'Edit', edit_question_comment_path(cmt),class: 'btn btn-default btn-xs'%></th>
+            <th><%= link_to 'Destroy', question_comment_path(cmt),class: 'btn btn-default btn-xs', method: :delete, data: { confirm: 'Are you sure?' }%> </th>
           </tr>
         <% end %>
 

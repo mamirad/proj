@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  quizquestion: one
+  ans: MyString
+  max: 1
+  obtain: 1
+
+two:
+  user: two
+  quizquestion: two
+  ans: MyString
+  max: 1
+  obtain: 1

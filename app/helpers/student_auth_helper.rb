@@ -1,0 +1,2 @@
+module StudentAuthHelper
+end

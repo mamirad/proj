@@ -1,0 +1,11 @@
+<h1>Search quiz code</h1>
+<%= form_tag  quiz_code_path, method: :get, id: "search_quiz_form" do %>
+  <%= text_field_tag :fld_quiz_code, params[:stock],
+                     placeholder: "Enter quiz code", autofocus: true,
+                     class: "form-control search-box input-lg" %>
+  <%= button_tag class: "btn btn-lg btn-success" do %>
+    <i class="fa fa-search"></i> Enter
+  <% end %>
+<% end %>
+
+

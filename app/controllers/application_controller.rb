@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+
+  before_action :set_cache_headers
+  
   before_action :authenticate_user!
   include Pundit
   protect_from_forgery
@@ -7,6 +10,12 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
 
   def user_not_authorized
 
@@ -54,8 +63,8 @@ class ApplicationController < ActionController::Base
       teacher_auth_home_path
     when 'proof_reader' #compare to 2
       proof_reader_home_path
-      # when 'federal'    #compare to 3
-      # 	federal_auth_path
+      when 'student'    #compare to 3
+        student_auth_home_path
 
     else
       puts "it was something else"

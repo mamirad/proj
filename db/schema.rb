@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_073307) do
+ActiveRecord::Schema.define(version: 2019_05_10_055627) do
 
   create_table "boardgroups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(version: 2019_05_03_073307) do
     t.index ["teachercourse_id"], name: "index_mcqs_on_teachercourse_id"
   end
 
+  create_table "qquizzes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "expire_date"
+    t.bigint "teachercourse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teachercourse_id"], name: "index_qquizzes_on_teachercourse_id"
+  end
+
   create_table "question_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
     t.boolean "status"
@@ -81,6 +89,27 @@ ActiveRecord::Schema.define(version: 2019_05_03_073307) do
     t.datetime "updated_at", null: false
     t.index ["course_question_id"], name: "index_question_comments_on_course_question_id"
     t.index ["user_id"], name: "index_question_comments_on_user_id"
+  end
+
+  create_table "quizquestions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "qquiz_id"
+    t.bigint "course_question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_question_id"], name: "index_quizquestions_on_course_question_id"
+    t.index ["qquiz_id"], name: "index_quizquestions_on_qquiz_id"
+  end
+
+  create_table "student_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "quizquestion_id"
+    t.string "ans"
+    t.integer "max"
+    t.integer "obtain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quizquestion_id"], name: "index_student_results_on_quizquestion_id"
+    t.index ["user_id"], name: "index_student_results_on_user_id"
   end
 
   create_table "teachercourses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -121,8 +150,13 @@ ActiveRecord::Schema.define(version: 2019_05_03_073307) do
   add_foreign_key "course_questions", "teachercourses"
   add_foreign_key "courses", "boardgroups"
   add_foreign_key "mcqs", "teachercourses"
+  add_foreign_key "qquizzes", "teachercourses"
   add_foreign_key "question_comments", "course_questions"
   add_foreign_key "question_comments", "users"
+  add_foreign_key "quizquestions", "course_questions"
+  add_foreign_key "quizquestions", "qquizzes"
+  add_foreign_key "student_results", "quizquestions"
+  add_foreign_key "student_results", "users"
   add_foreign_key "teachercourses", "courses"
   add_foreign_key "teachercourses", "teachers"
 end
