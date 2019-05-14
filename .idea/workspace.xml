@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a6d4c0d-4b77-49ad-9fad-3047a9d41a83" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/student_auth_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/student_auth_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/header/admin_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/header/admin_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/menu/admin_menu.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/menu/admin_menu.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -53,11 +51,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="589">
               <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -118,7 +137,6 @@
         <option value="$PROJECT_DIR$/app/views/qquizzes/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/qquizzes_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/custom_layouts/studentlayout.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/header/student_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/qquizzes/index.html.erb" />
@@ -143,11 +161,12 @@
         <option value="$PROJECT_DIR$/app/views/student_auth/view_sol_quiz.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/header/teacher_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/menu/admin_menu.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/teachers/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/student_auth_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/header/admin_header.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -181,6 +200,13 @@
               <item name="board_certification" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="board_certification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="board_certification" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="board_certification" type="b2602c69:ProjectViewProjectNode" />
@@ -374,12 +400,12 @@
       <workItem from="1557372836510" duration="23042000" />
       <workItem from="1557459887119" duration="15303000" />
       <workItem from="1557721575239" duration="21261000" />
-      <workItem from="1557814689337" duration="7590000" />
+      <workItem from="1557814689337" duration="8830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309077000" />
+    <option name="totallyTimeSpent" value="310317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="25" width="1305" height="743" extended-state="6" />
@@ -508,13 +534,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/custom_layouts/federallayout.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/header/student_header.html.erb">
@@ -723,16 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/course.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -772,6 +781,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
