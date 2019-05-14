@@ -37,7 +37,7 @@
       <td><%=q.teachercourse.course.name %></td>
       <td><%=link_to 'Show', course_question_path(q) %> </td>
 <!--      Edit button will be removed if all comment are ture-->
-      <td><%=link_to 'Edit', edit_course_question_path(q) if q.question_comments.where('status=?',1).empty?
+      <td><%=link_to 'Edit', edit_course_question_path(q) if q.question_comments.where('status=?',true).empty?
       %></td>
       <td><%=link_to 'Delete', course_question_path(q), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
 

@@ -71,4 +71,10 @@ class ApplicationController < ActionController::Base
       puts current_user.role
     end
   end
+
+  # def after_sign_out_path_for(resource)
+  #   set_cache_headers
+  #   root_path
+  #
+  # end
 end
