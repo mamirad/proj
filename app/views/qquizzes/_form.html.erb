@@ -16,7 +16,7 @@
       CourseQuestion.where('teachercourse_id=?', session[:teachercourse]).each do |cq|
 
 
-        unless cq.question_comments.where('status=?',1).empty?
+        unless cq.question_comments.where('status=?',true).empty?
 
         @abc.push(cq)
 
