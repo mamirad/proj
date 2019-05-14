@@ -4,7 +4,7 @@ class Qquiz < ApplicationRecord
   has_many :student_results,through: :quizquestions
   has_many :course_questions,through: :quizquestions
 
-  # validates :expire_date, presence: true
+  validates :expire_date, presence: true
 
 
 

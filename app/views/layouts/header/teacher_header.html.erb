@@ -249,7 +249,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                   <%= link_to('Logout', destroy_user_session_path, method: :delete,  data: { turbolinks: false }) %>
+                   <%= link_to('Logout', destroy_user_session_path, method: :delete, :onclick => 'location.reload()') %>
                 </div>
               </li>
             </ul>

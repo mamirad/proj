@@ -23,11 +23,3 @@
 // require turbolinks
 
 //= require_tree .
-
-
-$(document).on('turbolinks:load', function() {
-    window.history.pushState('', null, './');
-    $(window).on('popstate', function () {
-        location.reload(true);
-    });
-});

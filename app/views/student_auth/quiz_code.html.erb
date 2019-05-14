@@ -28,7 +28,9 @@
 
             }
             if (minutes == 0 && seconds == 0) {
+                document.getElementById("quizsubmit").click();
                 alert('1');
+              
 
                 document.getElementById("nextquestion").click();
             }
@@ -228,7 +230,7 @@
                                class: "form-control " %>
           <% end %>
           <br>
-          <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+          <%= button_tag(type: :submit, class: "btn btn-lg btn-success",id: 'quizsubmit') do %>
             <i class="fa fa-search"></i> Submit
           <% end %>
         </div>
