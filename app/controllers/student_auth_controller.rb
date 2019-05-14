@@ -5,25 +5,30 @@ class StudentAuthController < ApplicationController
   end
 
   def quiz_code
-    if Qquiz.find(params[:fld_quiz_code]).expire_date > Date.today
-      @pqr = Quizquestion.where('qquiz_id=?', params[:fld_quiz_code]).first
-      @hi = StudentResult.where('quizquestion_id=?', @pqr.id).present?
-      unless @hi
-        @quiz_questions = Qquiz.find(params[:fld_quiz_code]).course_questions.select("quizquestions.id as 'qqid',course_questions.*")
-      else
-        @quiz_questions = nil
+    begin
+      if Qquiz.find(params[:fld_quiz_code]).expire_date > Date.today
 
-        redirect_back fallback_location: quiz_code_path, :flash => {:error => "Test already taken Insufficient rights!"}
+        @pqr = Quizquestion.where('qquiz_id=?', params[:fld_quiz_code]).first
+        @hi = StudentResult.where('quizquestion_id=?', @pqr.id).present?
+        unless @hi
+          @quiz_questions = Qquiz.find(params[:fld_quiz_code]).course_questions.select("quizquestions.id as 'qqid',course_questions.*")
+
+        else
+          @quiz_questions = nil
+
+          redirect_back fallback_location: quiz_code_path, :flash => {:error => "Test already taken Insufficient rights!"}
+
+        end
+      else
+        redirect_back fallback_location: quiz_code_path, :flash => {:error => "Quiz Date Expired"}
 
       end
-    else
-      redirect_back fallback_location: quiz_code_path, :flash => {:error => "Quiz Date Expired"}
 
+        # StudentResult.where(['user_id=? and quizquestion_id=?', current_user.id, @quiz_questions])
+        # # session[:quizid]=params[:fld_quiz_code]
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_back fallback_location: quiz_code_path, :flash => {:error => e}
     end
-
-    # StudentResult.where(['user_id=? and quizquestion_id=?', current_user.id, @quiz_questions])
-    # # session[:quizid]=params[:fld_quiz_code]
-
   end
 
   def sol_quiz
