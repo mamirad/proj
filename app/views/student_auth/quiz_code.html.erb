@@ -22,8 +22,10 @@
             display.textContent = minutes + ":" + seconds;
 
             if (clear == 1) {
+                document.location.href="/users/sign_in";
                 clearInterval(abc);
                 display.textContent = "time complected"
+
             }
             if (minutes == 0 && seconds == 0) {
                 alert('1');
@@ -192,9 +194,11 @@
   }
 </style>
 
+
 <div id="result"></div>
 <div id="time"></div>
 <div id="max_time"></div>
+
 <div class="slideshow-container">
 
   <!--  <script>timeout()</script>-->
@@ -240,7 +244,7 @@
   <br><br>
   <br> <br>
   <!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
-  <a class="next" id="nextquestion" onclick="plusSlides(1)">Skip</a>
+  <a class="next" id="nextquestion" onclick="plusSlides(1)">next</a>
 
 </div>
 <br>

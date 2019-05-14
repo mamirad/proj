@@ -62,15 +62,20 @@ class TeacherAuthController < ApplicationController
     @mcq.destroy
     redirect_to view_teacher_cources_path
   end
+
   def mark_quiz
-@teacher_quiz_questions=Qquiz.find(params[:quiz]).quizquestions
+    @teacher_quiz_questions = Qquiz.find(params[:quiz]).quizquestions
     # byebug
   end
-  def update_quiz_marks
-    byebug
-    respond_to do |format|
-      format.js{render partial: 'teacher_auth/update_quiz_marks'}
 
+  def update_quiz_marks
+    @stu_result = StudentResult.find(params[:stu_result])
+    @stu_result.obtain = params[:marks]
+    if @stu_result.save
+      respond_to do |format|
+        format.js {render partial: 'teacher_auth/update_quiz_marks'}
+
+      end
     end
   end
 

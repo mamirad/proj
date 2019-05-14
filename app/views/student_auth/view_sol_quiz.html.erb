@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <tr>
+    <th>Quiz code</th>
+    <th>Expire Date</th>
+    <th>Question</th>
+    <th>Your Ans</th>
+    <th>obtain marks</th>
+    <th>Quiz date</th>
+
+  </tr>
+  <%@student_result.each do|sr| %>
+  <tr>
+    <td><%=sr.quizquestion.qquiz.id %></td>
+    <td><%=sr.quizquestion.qquiz.expire_date %></td>
+    <td><%=sr.quizquestion.course_question.question %></td>
+    <td><%=sr.ans %></td>
+    <td><%=sr.obtain %></td>
+    <td><%=sr.created_at %></td>
+  </tr>
+  <% end %>
+</table>

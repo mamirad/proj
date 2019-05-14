@@ -1,3 +1,4 @@
+<div id="result"> </div>
 <table class="table table-bordered">
   <tr>
     <th>Student Id</th>
@@ -17,20 +18,21 @@
         <td>
           <%= form_tag update_quiz_marks_path, remote: true, method: :get, id: "update_marks" do %>
 
-            <input type="hidden" value=<%= stu_result.id %> name="quizquestionid"/>
+            <input type="hidden" value=<%= stu_result.id %> name="stu_result"/>
             <!--            <input type="hidden" value=<%#= quiz_question.qqid %> name="quizquestionid"/>-->
 
 
-            <%= text_field_tag :marks, params[:marks],
+            <%= text_field_tag :marks, stu_result.obtain,
                                placeholder: "Marks", autofocus: true,
                                class: "form-control" %>
 
             <br>
             <%# if stu_result.ans.to_i == 9999 %>
+
               <%= button_tag(type: :submit, class: "btn btn-xs btn-success") do %>
                 Submit
               <% end %>
-            <div id="result"></div>
+
             <%# end %>
 
 

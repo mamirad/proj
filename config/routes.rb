@@ -60,6 +60,7 @@ Rails.application.routes.draw do
   get '/search_quiz', to: 'student_auth#search_quiz', as: 'search_quiz'
   get '/quiz_code', to: 'student_auth#quiz_code', as: 'quiz_code'
   get '/sol_quiz', to: 'student_auth#sol_quiz', as: 'sol_quiz'
+  get '/view_sol_quiz', to: 'student_auth#view_sol_quiz', as: 'view_sol_quiz'
 
 
   get '/mark_quiz/:quiz', to: 'teacher_auth#mark_quiz', as: 'mark_quiz'
