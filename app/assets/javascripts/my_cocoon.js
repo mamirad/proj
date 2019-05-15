@@ -2,23 +2,25 @@ $(document).ready(function() {
     // $("#err").html("<ul><li>Question paper must contain atleast 2 questions to submit</li></ul>")
 
 
-    $(".aq").click(function() {
-        var a = $("#mcq_form").find("div.fields:visible").length;
-        if (parseInt(a)  >0){
+    // $(".aq").click(function() {
+    //     var a = $("#mcq_form").find("div.fields:visible").length;
+    //     if (parseInt(a)  >0){
 
-            $(".form-actions").show();
-        }
-        else
-        {
-            $(".form-actions").hide();
-        }
-
-
-    });
+    //         $(".form-actions").show();
+    //     }
+    //     else
+    //     {
+    //         $(".form-actions").hide();
+    //     }
 
 
+    // });
 
 
+
+setTimeout(function() {
+        $(".alert").alert('close');
+    }, 2000);
 
 
 });

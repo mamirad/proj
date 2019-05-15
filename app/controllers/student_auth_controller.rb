@@ -12,7 +12,7 @@ class StudentAuthController < ApplicationController
         @hi = StudentResult.where('quizquestion_id=?', @pqr.id).present?
         unless @hi
           @quiz_questions = Qquiz.find(params[:fld_quiz_code]).course_questions.select("quizquestions.id AS qqid","course_questions.*")
-        
+
         else
           @quiz_questions = nil
 

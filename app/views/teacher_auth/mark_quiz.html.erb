@@ -29,7 +29,9 @@
             <br>
             <%# if stu_result.ans.to_i == 9999 %>
 
-              <%= button_tag(type: :submit, class: "btn btn-xs btn-success") do %>
+            <%= button_tag 'Submit', class: 'btn btn-success',
+                           data: { disable_with: "<i class='fa fa-refresh fa-spin'>
+      </i> Submitting Changes..."}  do%>
                 Submit
               <% end %>
 

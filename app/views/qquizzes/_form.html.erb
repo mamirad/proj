@@ -25,11 +25,17 @@
       end
       # byebug
     %>
-    <%= f.association :course_questions, label_method: :question, as: :check_boxes, collection: @abc %>
+    <% unless @abc.any? %>
+    <div style="color:red;">No Approved Question found by Admin </div>
+      <%else%>
+       <%= f.association :course_questions, label_method: :question, as: :check_boxes, collection: @abc %>
+       <div class="form-actions">
+         <%= f.button :submit %>
+        </div>
+   <% end %>
+   
     <%#= f.association :teachercourse %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  
 <% end %>

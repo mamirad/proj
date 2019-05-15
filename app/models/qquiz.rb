@@ -10,6 +10,7 @@ class Qquiz < ApplicationRecord
 
 
   validate :expiration_date_cannot_be_in_the_past
+  validate :must_have_one_item
 
   def expiration_date_cannot_be_in_the_past
 
@@ -17,6 +18,10 @@ class Qquiz < ApplicationRecord
        errors.add(:expiry_date, "Date is less then current Date")
       # errors.add(:base, "Custom error message",message: 'Date is less then current Date')
     end
+  end
+
+  def must_have_one_item
+    errors.add(:base, 'You must select at least one ') if self.course_question_ids.all?{|item| item.blank? }    
   end
 
 end

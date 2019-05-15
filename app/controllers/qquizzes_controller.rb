@@ -18,7 +18,7 @@ class QquizzesController < ApplicationController
   def new
 
     @qquiz = Qquiz.new
-session[:teachercourse]=params[:teachercourse]
+    session[:teachercourse]=params[:teachercourse]
 
 
 
